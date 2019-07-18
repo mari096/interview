@@ -65,7 +65,7 @@ public class RegexMatching {
                 } else if (pattern[j - 1] == '*')  {
                     T[i][j] = T[i][j - 2];
                     if (pattern[j-2] == '.' || pattern[j - 2] == text[i - 1]) {
-                        T[i][j] = T[i][j] | T[i - 1][j];
+                        T[i][j] = T[i][j] | T[i - 1][j] | T[i][j-1];
                     }
                 } else {
                     T[i][j] = false;
